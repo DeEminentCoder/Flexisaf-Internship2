@@ -5,11 +5,11 @@ import sass from 'sass';
 const sassCompiler = gulpSass(sass);
 
 function buildstyles() {
-  return src('*.scss').pipe(sassCompiler()).pipe(dest('css'));
+  return src('simozy/**/*.scss').pipe(sassCompiler()).pipe(dest('css'));
 }
 
 function watchTask() {
-  watch(['*.scss'], buildstyles);
+  watch(['simozy/**/*.scss'], buildstyles);
 }
 
 export default series(buildstyles, watchTask);
